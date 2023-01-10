@@ -1,0 +1,131 @@
+:root {
+  --color-text: #000000;
+  --color-base: #FFFFFF;
+  --color-box-shadow: #555;
+  --color-decor: #7E72F2;
+  --color-hover-add: #00008B;
+}
+
+body {
+  color: var(--color-text);
+  font-weight: 500;
+
+}
+
+.wrapper-card {
+  outline: 1px solid;
+  background: var(--color-base);
+
+  margin: 0 auto;
+  height: 440px;
+  border-radius: 8px;
+  box-shadow:0 0 10px var(--color-box-shadow);
+}
+
+  .block-img {
+    outline: 1px solid;
+    margin: 0 auto;
+    padding: 12px;
+    max-width: 300px;
+/* height: 209px; */
+    
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+  }
+    
+    /* img{
+      width: 100%;
+      max-height: 200px;
+    } */
+
+  .block-rating-price {
+    outline: 1px solid;
+    padding: 10px 23px 10px 23px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+    .block-rating {
+      /* outline: 1px solid; */
+      background: var(--color-decor);
+      border-radius: 7%;
+      width: 70px;
+      height: 30px;
+      color: var(--color-base);
+      font-size: 16px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .block-rating > div {
+      margin: 2px;
+    }
+    
+    /* .block-rating:hover {outline: 2px solid #00BFFF;} */
+    /* .block-rating:hover > div {color: #00CED1;} */
+    /* .block-rating:hover > div {color: #00CED1;} */
+
+    .block-price {
+      /* outline: 1px solid; */
+      width: 50px;
+      height: 30px;
+      font-size: 18px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+  .bloсk-description-type {
+    outline: 1px solid;
+    padding: 0 23px 0 23px;
+  }
+
+    .bloсk-description {
+      outline: 1px solid;
+          
+      display: flex;
+      align-items: center;
+    }
+
+    .bloсk-description > h1 {
+      margin: 15px 0 15px 0;
+      font-size: 17px;
+      line-height: 1.2;
+      font-weight: inherit;
+    }
+    
+    .block-type {
+      outline: 1px solid;
+      margin: 0 0 0 0;
+      padding: 10px 0 10px 0;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+    }
+
+    .block-type > p {
+      margin: 0 0 0 0;
+    }
+    
+  .block-button-add {
+    /* outline: 1px solid; */
+    background: var(--color-decor);
+    border-radius: 0 0 8px 8px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-base);
+    font-size: 14px;
+  }
+
+  .block-button-add > p {
+    margin: 15px 0 15px 0;
+  }
+
+  .block-button-add:hover {
+    background: var(--color-hover-add);
+  }

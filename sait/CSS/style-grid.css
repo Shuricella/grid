@@ -1,0 +1,61 @@
+:root {
+    --color-background-sait: #f9f9f9;
+}
+
+body {
+    background-color: var(--color-background-sait);
+}
+.wrapper-grid {
+    /* outline: 1px solid black; */
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 280px minmax(670px, 1050px);
+    grid-template-rows: auto 45px auto 60px;
+    grid-template-areas: 
+    "header header"
+    "nav search"
+    "nav main"
+    ". pagination";
+    gap: 20px 20px;
+}
+
+.item-header {
+    /* outline: 1px solid black; */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 80px;
+        
+    grid-area: header;
+}
+
+.item-products {
+    /* outline: 1px solid black; */
+    grid-area: nav;
+}
+
+.item-search {
+    /* outline: 1px solid black; */
+    grid-area: search;
+}
+
+.item-main {
+    /* outline: 1px solid black; */
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    grid-gap: 20px 20px;
+    
+    grid-area: main;
+    
+}
+
+.item-pagination {
+    /* outline: 1px solid black; */
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    grid-area: pagination;    
+}

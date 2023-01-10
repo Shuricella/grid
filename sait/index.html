@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Store</title>
+
+    <link rel="stylesheet" href="./CSS/style-grid.css">
+    <link rel="stylesheet" href="./CSS/style-header-component.css">
+    <link rel="stylesheet" href="./CSS/style_filters_list.css">
+    <link rel="stylesheet" href="./CSS/style_button_clear_filters.css">
+    <link rel="stylesheet" href="./CSS/style-slider.css">
+    <link rel="stylesheet" href="./CSS/style-search-component.css">
+    <link rel="stylesheet" href="./CSS/style-card.css">
+    <link rel="stylesheet" href="./CSS/pagination_style.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet">
+</head>
+<body>
+    <main class="wrapper-grid">
+
+        <!-- item-header -->
+        <header class="item-header">
+          <h1 class="header-text-onlstore">Online Store</h1>
+
+          <section class="header-cart">
+              <div class="header-cart-bloc">
+                  <div class="header-cart-bloc-resicle"><i class="bi bi-cart"></i></div>
+                  <p class="header-cart-bloc-text">CART</p>
+              </div>
+          </section>
+        </header>
+
+        <!-- item-products -->
+        <aside class="item-products">
+
+          <div class="wrapper-filters-list">
+            <section class="block-slider">
+
+              <h2 class="block-slider-text">Prise</h2>
+      
+              <section class="wrapper-slider">
+                <input type="range" class="form-range-slider" min="0" max="85000"  step="1000" id="customRange1">
+        
+                <div class="block-slider-price">
+                    <div class="slider-price"><p class="slider-number">0 UA</p></div>
+                    <div class="slider-price"><p class="slider-number">85000 UA</p></div>
+                </div>
+              </section>
+      
+            </section>
+      
+      
+            <section class="category-filters-list">
+      
+              <h2 class="block-category-brand">Category</h2>
+      
+              <form action="#">
+      
+                <ul class="blocks-cat-list">
+                  
+                  <li class="blocks-cat-br">
+                    <input type="checkbox" id="blocks-category-monitors" class="cursor-filter-list" name="category" value="Monitors">
+                    <label for="blocks-category-monitors" class="cursor-filter-list none-style-filters text-color-filters">Monitors</label>
+                    <!-- <a href="#" data-element="check-link" class="none-style-filters text-color-filters">Monitors</a> -->
+                  </li>
+                  
+                  <li class="blocks-cat-br">
+                    <input type="checkbox" id="blocks-category-laptops" class="cursor-filter-list" name="category" value="LapTops">
+                    <label for="blocks-category-laptops" class="cursor-filter-list none-style-filters text-color-filters">LapTops</label>
+                    <!-- <a href="#" data-element="check-link" class="none-style-filters text-color-filters">LapTops</a> -->
+                  </li>
+      
+                  <li class="blocks-cat-br">
+                    <input type="checkbox" id="blocks-category-video-cards" class="cursor-filter-list" name="category" value="Video cards">
+                    <label for="blocks-category-video-cards" class="cursor-filter-list none-style-filters text-color-filters">Video cards</label>
+                    <!-- <a href="#" data-element="check-link" class="none-style-filters text-color-filters">Video cards</a> -->
+                  </li>
+      
+                  <li class="blocks-cat-br">
+                    <input type="checkbox" id="blocks-category-gaming-keyboards" class="cursor-filter-list" name="category" value="Gaming keyboards">
+                    <label for="blocks-category-gaming-keyboards" class="cursor-filter-list none-style-filters text-color-filters">Gaming keyboards</label>
+                    <!-- <a href="#" data-element="check-link" class="none-style-filters text-color-filters">Gaming keyboards</a> -->
+                  </li>
+      
+                  <li class="blocks-cat-br">
+                    <input type="checkbox" id="blocks-category-computer-mouse" class="cursor-filter-list" name="category" value="Computer mouse">
+                    <label for="blocks-category-computer-mouse" class="cursor-filter-list none-style-filters text-color-filters">Computer mouse</label>
+                    <!-- <a href="#" data-element="check-link" class="none-style-filters text-color-filters">Computer mouse</a> -->
+                  </li>
+        
+                  <li class="blocks-cat-br">
+                    <input type="checkbox" id="blocks-category-ssd" class="cursor-filter-list" name="category" value="SSD">
+                    <label for="blocks-category-ssd" class="cursor-filter-list none-style-filters text-color-filters">SSD</label>
+                    <!-- <a href="#" data-element="check-link" class="none-style-filters text-color-filters">SSD</a> -->
+                  </li>
+        
+                  <li class="blocks-cat-br">
+                    <input type="checkbox" id="blocks-category-sound-cards" class="cursor-filter-list" name="category" value="Sound cards">
+                    <label for="blocks-category-sound-cards" class="cursor-filter-list none-style-filters text-color-filters">Sound cards</label>
+                    <!-- <a href="#" data-element="check-link" class="none-style-filters text-color-filters">Sound cards</a> -->
+                  </li>
+        
+                  <li class="blocks-cat-br">
+                    <input type="checkbox" id="blocks-category-ram" class="cursor-filter-list" name="category" value="RAM">
+                    <label for="blocks-category-ram" class="cursor-filter-list none-style-filters text-color-filters">RAM</label>
+                    <!-- <a href="#" data-element="check-link" class="none-style-filters text-color-filters">RAM</a> -->
+                  </li>
+                </ul>
+      
+              </form>
+      
+            </section>
+      
+      
+            <section class="brand">
+      
+              <h2 class="block-category-brand strip">Brand</h2>
+      
+              <form action="#">
+      
+                <ul class="blocks-cat-list">
+      
+                  <li class="blocks-cat-br">
+                    <input type="checkbox" id="blocks-brand-asus" class="cursor-filter-list" name="brand" value="Asus">
+                    <label for="blocks-brand-asus" class="cursor-filter-list none-style-filters text-color-filters">Asus</label>
+                    <!-- <a href="#" data-element="check-link" class="none-style-filters text-color-filters">Asus</a> -->
+                  </li>
+      
+                  <li class="blocks-cat-br">
+                    <input type="checkbox" id="blocks-brand-acer" class="cursor-filter-list" name="brand" value="Acer">
+                    <label for="blocks-brand-acer" class="cursor-filter-list none-style-filters text-color-filters">Acer</label>
+                    <!-- <a href="#" data-element="check-link" class="none-style-filters text-color-filters">Acer</a> -->
+                  </li>
+      
+                  <li class="blocks-cat-br">
+                    <input type="checkbox" id="blocks-brand-apple" class="cursor-filter-list" name="brand" value="Apple">
+                    <label for="blocks-brand-apple" class="cursor-filter-list none-style-filters text-color-filters">Apple</label>
+                    <!-- <a href="#" data-element="check-link" class="none-style-filters text-color-filters">Apple</a> -->
+                  </li>
+      
+                  <li class="blocks-cat-br">
+                    <input type="checkbox" id="blocks-brand-dell" class="cursor-filter-list" name="brand" value="Dell">
+                    <label for="blocks-brand-dell" class="cursor-filter-list none-style-filters text-color-filters">Dell</label>
+                    <!-- <a href="#" data-element="check-link" class="none-style-filters text-color-filters">Dell</a> -->
+                  </li>
+      
+                  <li class="blocks-cat-br">
+                    <input type="checkbox" id="blocks-brand-dynamode" class="cursor-filter-list" name="brand" value="Dynamode">
+                    <label for="blocks-brand-dynamode" class="cursor-filter-list none-style-filters text-color-filters">Dynamode</label>
+                    <!-- <a href="#" data-element="check-link" class="none-style-filters text-color-filters">Dynamode</a> -->
+                  </li>
+      
+                  <li class="blocks-cat-br">
+                    <input type="checkbox" id="blocks-brand-gigabyte" class="cursor-filter-list" name="brand" value="Gigabyte">
+                    <label for="blocks-brand-gigabyte" class="cursor-filter-list none-style-filters text-color-filters">Gigabyte</label>
+                    <!-- <a href="#" data-element="check-link" class="none-style-filters text-color-filters">Gigabyte</a> -->
+                  </li>
+      
+                  <li class="blocks-cat-br">
+                    <input type="checkbox" id="blocks-brand-kingston" class="cursor-filter-list" name="brand" value="Kingston">
+                    <label for="blocks-brand-kingston" class="cursor-filter-list none-style-filters text-color-filters">Kingston</label>
+                    <!-- <a href="#" data-element="check-link" class="none-style-filters text-color-filters">Kingston</a> -->
+                  </li>
+      
+                  <li class="blocks-cat-br">
+                    <input type="checkbox" id="blocks-brand-lenovo" class="cursor-filter-list" name="brand" value="Lenovo">
+                    <label for="blocks-brand-lenovo" class="cursor-filter-list none-style-filters text-color-filters">Lenovo</label>
+                    <!-- <a href="#" data-element="check-link" class="none-style-filters text-color-filters">Lenovo</a> -->
+                  </li>
+        
+                  <li class="blocks-cat-br">
+                    <input type="checkbox" id="blocks-brand-logitech" class="cursor-filter-list" name="brand" value="Logitech">
+                    <label for="blocks-brand-logitech" class="cursor-filter-list none-style-filters text-color-filters">Logitech</label>
+                    <!-- <a href="#" data-element="check-link" class="none-style-filters text-color-filters">Logitech</a> -->
+                  </li>
+        
+                  <li class="blocks-cat-br">
+                    <input type="checkbox" id="blocks-brand-msi" class="cursor-filter-list" name="brand" value="MSI">
+                    <label for="blocks-brand-msi" class="cursor-filter-list none-style-filters text-color-filters">MSI</label>
+                    <!-- <a href="#" data-element="check-link" class="none-style-filters text-color-filters">MSI</a> -->
+                  </li>
+        
+                  <li class="blocks-cat-br">
+                    <input type="checkbox" id="blocks-brand-benq" class="cursor-filter-list" name="brand" value="BenQ">
+                    <label for="blocks-brand-benq" class="cursor-filter-list none-style-filters text-color-filters">BenQ</label>
+                    <!-- <a href="#" data-element="check-link" class="none-style-filters text-color-filters">BenQ</a> -->
+                  </li>
+        
+                  <li class="blocks-cat-br">
+                    <input type="checkbox" id="blocks-brand-a4tech" class="cursor-filter-list" name="brand" value="A4Tech">
+                    <label for="blocks-brand-a4tech" class="cursor-filter-list none-style-filters text-color-filters">A4Tech</label>
+                    <!-- <a href="#" data-element="check-link" class="none-style-filters text-color-filters">A4Tech</a> -->
+                  </li>
+      
+                </ul>
+      
+              </form>
+      
+              <div class="block-line"></div>
+      
+            </section>
+      
+      
+            <div class="block-slider-rating">
+      
+              <h2 class="block-slider-text">Rating</h2>
+      
+              <section class="wrapper-slider">
+                <input type="range" class="form-range-slider" min="0" max="5"  step="1" id="customRange1">
+        
+                <div class="block-slider-price">
+                    <div class="slider-rating"><p class="slider-number">0</p></div>
+                    <div class="slider-rating"><p class="slider-number">5</p></div>
+                </div>
+              </section>
+      
+            </div>
+          </div>
+          
+          <section class="wrapper-butto-clear">
+            <button type="button" class="butto-clear">CLEAR ALL FILTERS</button>
+          </section>
+
+        </aside>
+
+        <!-- item-Search -->
+        <section class="item-search wrapper-search-component">
+
+          <form action="#" class="search-text">
+            <input type="text" class="line-search" placeholder="Search">
+          </form>
+
+          <div class="search-icon">
+              <!-- <i class="bi bi-search"></i> -->
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+              </svg>
+          </div>
+
+        </section>
+        
+        <!-- item-main -->
+        <section class="item-main">
+
+          <!-- Card-1 -->
+          <div class="wrapper-card">
+
+            <section class="block-img">
+              <img src="https://content.rozetka.com.ua/goods/images/big_tile/168721089.jpg" alt="Монитор Asus TUF Gaming VG259QR">
+            </section>
+            
+            <section class="block-value">
+              <ul class="block-rating-price">
+                <li class="block-rating">
+                    <p>0.69</p>
+                    <div><i class="bi bi-star"></i></div>
+                </li>
+        
+                <li>
+                  <p class="block-price">14200</p>
+                </li>
+              </ul>
+            </section>
+        
+            <section class="bloсk-description-type">
+              <div class="bloсk-description">
+                <h1>Монитор 24.5" Asus TUF Gaming VG259QR (90LM0530-B03370)</h1>
+              </div>
+          
+              <div class="block-type">
+                <p>monitors</p>
+              </div>
+            </section>
+            
+            <section class="block-button-add">
+              <p>Add To Cart</p>
+            </section>
+              
+          </div>
+            
+
+          <!-- Card-2 -->
+          <div class="wrapper-card">
+
+            <section class="block-img">
+              <img src="https://content.rozetka.com.ua/goods/images/big_tile/11444172.jpg" alt="Монитор BenQ Zowie XL2411P">
+            </section>
+            
+            <section class="block-value">
+              <ul class="block-rating-price">
+                <li class="block-rating">
+                    <p>0.54</p>
+                    <div><i class="bi bi-star"></i></div>
+                </li>
+        
+                <li>
+                  <p class="block-price">6500</p>
+                </li>
+              </ul>
+            </section>
+        
+            <section class="bloсk-description-type">
+              <div class="bloсk-description">
+                <h1>Монитор 24" BenQ Zowie XL2411P (9H.LGPLB.QBE/9H.LGPLB.QPE)</h1>
+              </div>
+          
+              <div class="block-type">
+                <p>monitors</p>
+              </div>
+            </section>
+            
+            <section class="block-button-add">
+              <p>Add To Cart</p>
+            </section>
+              
+          </div>
+
+
+          <!-- Card-3 -->
+          <div class="wrapper-card">
+
+            <section class="block-img">
+              <img src="https://content1.rozetka.com.ua/goods/images/big_tile/178050370.jpg" alt="монитор BenQ GW2475H">
+            </section>
+            
+            <section class="block-value">
+              <ul class="block-rating-price">
+                <li class="block-rating">
+                    <p>0.5</p>
+                    <div><i class="bi bi-star"></i></div>
+                </li>
+        
+                <li>
+                  <p class="block-price">3800</p>
+                </li>
+              </ul>
+            </section>
+        
+            <section class="bloсk-description-type">
+              <div class="bloсk-description">
+                <h1>Монитор 23.8\" BenQ GW2475H (9H.LFELA.TBE)</h1>
+              </div>
+          
+              <div class="block-type">
+                <p>monitors</p>
+              </div>
+            </section>
+            
+            <section class="block-button-add">
+              <p>Add To Cart</p>
+            </section>
+              
+          </div>
+
+
+          <!-- Card-4 -->
+          <div class="wrapper-card">
+
+            <section class="block-img">
+              <img src="https://content1.rozetka.com.ua/goods/images/big_tile/191836868.jpg" alt="ноутбук Asus VivoBook 15 X513EA-BQ409">
+            </section>
+            
+            <section class="block-value">
+              <ul class="block-rating-price">
+                <li class="block-rating">
+                    <p>3.83</p>
+                    <div><i class="bi bi-star"></i></div>
+                </li>
+        
+                <li>
+                  <p class="block-price">22000</p>
+                </li>
+              </ul>
+            </section>
+        
+            <section class="bloсk-description-type">
+              <div class="bloсk-description">
+                <h1>Ноутбук Asus VivoBook 15 X513EA-BQ409 (90NB0SG4-M05090) Black</h1>
+              </div>
+          
+              <div class="block-type">
+                <p>laptops</p>
+              </div>
+            </section>
+            
+            <section class="block-button-add">
+              <p>Add To Cart</p>
+            </section>
+              
+          </div>
+
+
+          <!-- Card-5 -->
+          <div class="wrapper-card">
+
+            <section class="block-img">
+              <img src="https://content.rozetka.com.ua/goods/images/big_tile/192276490.jpg" alt="ноутбук Asus Laptop M515UA-BQ387">
+            </section>
+            
+            <section class="block-value">
+              <ul class="block-rating-price">
+                <li class="block-rating">
+                    <p>2.97</p>
+                    <div><i class="bi bi-star"></i></div>
+                </li>
+        
+                <li>
+                  <p class="block-price">21000</p>
+                </li>
+              </ul>
+            </section>
+        
+            <section class="bloсk-description-type">
+              <div class="bloсk-description">
+                <h1>Ноутбук Asus Laptop M515UA-BQ387 (90NB0U11-M05340) Slate Grey</h1>
+              </div>
+          
+              <div class="block-type">
+                <p>laptops</p>
+              </div>
+            </section>
+            
+            <section class="block-button-add">
+              <p>Add To Cart</p>
+            </section>
+              
+          </div>
+
+
+          <!-- Card-6 -->
+          <div class="wrapper-card">
+
+            <section class="block-img">
+              <img src="https://content1.rozetka.com.ua/goods/images/big_tile/172755042.jpg" alt="ноутбук Asus ZenBook UX425EA-BM295">
+            </section>
+            
+            <section class="block-value">
+              <ul class="block-rating-price">
+                <li class="block-rating">
+                    <p>2.63</p>
+                    <div><i class="bi bi-star"></i></div>
+                </li>
+        
+                <li>
+                  <p class="block-price">27000</p>
+                </li>
+              </ul>
+            </section>
+        
+            <section class="bloсk-description-type">
+              <div class="bloсk-description">
+                <h1>Ноутбук Asus ZenBook UX425EA-BM295 (90NB0SM1-M07340) Pine Grey + фирменный чехол</h1>
+              </div>
+          
+              <div class="block-type">
+                <p>laptops</p>
+              </div>
+            </section>
+            
+            <section class="block-button-add">
+              <p>Add To Cart</p>
+            </section>
+              
+          </div>
+
+
+          <!-- Card-7 -->
+          <div class="wrapper-card">
+
+            <section class="block-img">
+              <img src="https://content1.rozetka.com.ua/goods/images/big_tile/180781181.jpg" alt="ноутбук Asus ROG Strix G15 G513QE-HN029">
+            </section>
+            
+            <section class="block-value">
+              <ul class="block-rating-price">
+                <li class="block-rating">
+                    <p>2.65</p>
+                    <div><i class="bi bi-star"></i></div>
+                </li>
+        
+                <li>
+                  <p class="block-price">36500</p>
+                </li>
+              </ul>
+            </section>
+        
+            <section class="bloсk-description-type">
+              <div class="bloсk-description">
+                <h1>Ноутбук Asus ROG Strix G15 G513QE-HN029 (90NR05I2-M00950) Eclipse Gray</h1>
+              </div>
+          
+              <div class="block-type">
+                <p>laptops</p>
+              </div>
+            </section>
+            
+            <section class="block-button-add">
+              <p>Add To Cart</p>
+            </section>
+              
+          </div>
+
+
+          <!-- Card-8 -->
+          <div class="wrapper-card">
+
+            <section class="block-img">
+              <img src="https://content2.rozetka.com.ua/goods/images/big_tile/163134380.jpg" alt="ноутбук Dell Vostro 14 3400">
+            </section>
+            
+            <section class="block-value">
+              <ul class="block-rating-price">
+                <li class="block-rating">
+                    <p>4.93</p>
+                    <div><i class="bi bi-star"></i></div>
+                </li>
+        
+                <li>
+                  <p class="block-price">25999</p>
+                </li>
+              </ul>
+            </section>
+        
+            <section class="bloсk-description-type">
+              <div class="bloсk-description">
+                <h1>Ноутбук Dell Vostro 14 3400 (N4011VN3400EMEA01_i5XeW) Accent Black</h1>
+              </div>
+          
+              <div class="block-type">
+                <p>laptops</p>
+              </div>
+            </section>
+            
+            <section class="block-button-add">
+              <p>Add To Cart</p>
+            </section>
+              
+          </div>
+
+
+          <!-- Card-9 -->
+          <div class="wrapper-card">
+
+            <section class="block-img">
+              <img src="https://content1.rozetka.com.ua/goods/images/big_tile/186616819.jpg" alt="ноутбук Lenovo IdeaPad 3 15IGL05">
+            </section>
+            
+            <section class="block-value">
+              <ul class="block-rating-price">
+                <li class="block-rating">
+                    <p>3.85</p>
+                    <div><i class="bi bi-star"></i></div>
+                </li>
+        
+                <li>
+                  <p class="block-price">12500</p>
+                </li>
+              </ul>
+            </section>
+        
+            <section class="bloсk-description-type">
+              <div class="bloсk-description">
+                <h1>Ноутбук Lenovo IdeaPad 3 15IGL05 (81WQ000PRA) Business Black</h1>
+              </div>
+          
+              <div class="block-type">
+                <p>laptops</p>
+              </div>
+            </section>
+            
+            <section class="block-button-add">
+              <p>Add To Cart</p>
+            </section>
+              
+          </div>
+          
+
+        </section>
+
+        <!-- item-pagination -->
+        <section class="item-pagination">
+          
+          <nav class="container-pagination">
+
+            <a href="#" class="circle circle-left" data-element="nav-prev">
+              <i class="bi bi-chevron-left"></i>
+            </a>
+    
+            <ul class="page-list non-styles" data-element="pagination">
+    
+              <li>
+                <a href="#" data-element="page-link" class="circle non-styles active"  data-page-index="0">1</a>
+              </li>
+              <li>
+                <a href="#" data-element="page-link" class="circle non-styles"  data-page-index="1">2</a>
+              </li>
+              <li>
+                <a href="#" data-element="page-link" class="circle non-styles"  data-page-index="2">3</a>
+              </li>
+              <li>
+                <a href="#" data-element="page-link" class="circle non-styles"  data-page-index="3">4</a>
+              </li>
+              <li>
+                <a href="#" data-element="page-link" class="circle non-styles"  data-page-index="4">5</a>
+              </li>
+              <li>
+                <a href="#" data-element="page-link" class="circle non-styles"  data-page-index="5">6</a>
+              </li>
+              <li>
+                <a href="#" data-element="page-link" class="circle non-styles"  data-page-index="6">7</a>
+              </li>
+              <li>
+                <a href="#" data-element="page-link" class="circle non-styles"  data-page-index="7">8</a>
+              </li>
+              <li>
+                <a href="#" data-element="page-link" class="circle non-styles"  data-page-index="8">9</a>
+              </li>
+              <li>
+                <a href="#" data-element="page-link" class="circle non-styles"  data-page-index="9">10</a>
+              </li>
+              <li>
+                <a href="#" data-element="page-link" class="circle non-styles"  data-page-index="10">11</a>
+              </li>
+              <li>
+                <a href="#" data-element="page-link" class="circle non-styles"  data-page-index="11">12</a>
+              </li>
+    
+            </ul>
+    
+            <a href="#" class="circle circle-right" data-element="nav-next">
+              <i class="bi bi-chevron-right"></i>
+            </a>
+    
+          </nav>
+
+        </section>
+
+    </main>
+</body>
+</html>

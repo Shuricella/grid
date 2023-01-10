@@ -1,0 +1,75 @@
+:root {
+  --color-base: #FFFFFF;
+  --color-background-circle: #DCDCDC;
+  --color-circle-text: #000000;
+  --color-circle-hover: #0000CD;
+}
+
+/* .wrapper-pagination {
+  outline: 1px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 650px;
+  height: 60px;
+  margin: 0 auto;
+} */
+
+  .container-pagination {
+    /* outline: 1px solid; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 640px;
+    height: 50px;
+  }
+
+    .page-list{
+      /* outline: 1px solid; */
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0px;}
+
+    .circle {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 40px;
+      height: 40px;
+      padding: 0px;
+
+      border: 1px solid var(--color-base);
+      border-radius: 50%;
+      transition: .5s;
+      background: var(--color-background-circle);
+      color: var(--color-circle-text);
+      font-size: 17px;
+      font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .circle:hover {
+      background: var(--color-circle-hover);
+      color: var(--color-base);
+    }
+
+    .active {
+      background: var(--color-circle-hover);
+      color: var(--color-base);
+    }
+
+    .circle-left {
+      margin-right: 17px;
+    }
+
+    .circle-right {
+      margin-left: 17px;
+    }
+
+.non-styles{
+  text-decoration: none;
+  list-style: none;
+  padding: 0px;
+}
+
+
