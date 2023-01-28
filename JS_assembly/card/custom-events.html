@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Click me!</button>
+
+    <script>
+        const btnEvent = document.querySelector("#btn");
+
+        const myEvent = new CustomEvent("foo-bar-baz", {bubbles:true, detail:{foo:1, bar:"Anna"}});
+        
+        btnEvent.addEventListener("click", event => {
+            console.log("event", event);
+
+            btnEvent.dispatchEvent(myEvent);
+        });
+
+        btnEvent.addEventListener("foo-bar-baz", event => {
+            console.log("myEven=", 11111111);
+        });
+    </script>
+</body>
+</html>

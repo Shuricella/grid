@@ -1,7 +1,15 @@
 export default class Pagination {
-    constructor () {
+    constructor ({activePageIndex = 0} = {}) {
+        this.activePageIndex = activePageIndex;
+
         this.defaultPagesSize = 12;
+
         this.render();
+
+        console.log("this.activePageIndex=", this.activePageIndex);
+
+        this.addEventListeners();
+        
     }
 
     getTemplate() {
@@ -39,15 +47,42 @@ export default class Pagination {
             </ul>
         `
     }
-
+                                                                                // active
     getPageTemplate(pageIndex = 0) {
+        const isActive = (pageIndex === this.activePageIndex ? "active" : "");
         return `
             <li>
-                <a href="#" data-element="page-link" class="krug non-styles active"  data-page-index="${pageIndex}">
+                <a href="#" data-element="page-link" class="krug non-styles ${isActive}"  data-page-index="${pageIndex}">
                     ${pageIndex + 1}
                 </a>
             </li>
         `
+    }
+
+    setPage(pageIndex = 0) {
+        if(pageIndex === this.activePageIndex) return;
+
+        if(pageIndex > this.defaultPagesSize - 1 || pageIndex < 0) return;
+
+        const activePage = this.element.querySelector(".krug.active");
+        if(activePage) {activePage.classList.remove("active")}
+
+        const nextActivePage = this.element.querySelector(`[data-page-index="${pageIndex}"]`);
+        if(nextActivePage) {nextActivePage.classList.add("active")};
+
+        this.activePageIndex = pageIndex;
+    }
+
+    nextPage() {
+        const nextPageIndex = this.activePageIndex + 1;
+
+        this.setPage(nextPageIndex);
+    }
+
+    prevPage() {
+        const prevPageIndex = this.activePageIndex - 1;
+
+        this.setPage(prevPageIndex);
     }
 
     render() {
@@ -58,6 +93,32 @@ export default class Pagination {
         // помещаем элемент в наш обьект
         this.element = wrapper;
     }
+
+    addEventListeners() {
+       const prevPageBtn = this.element.querySelector('[data-element="nav-prev"]');
+       const nextPageBtn = this.element.querySelector('[data-element="nav-next"]');
+       const pagesList = this.element.querySelector('[data-element="pagination"]');
+
+       prevPageBtn.addEventListener("click", event => {this.prevPage();});
+       nextPageBtn.addEventListener("click", event => {this.nextPage();});
+
+       pagesList.addEventListener("click", event => {
+            const pageItem = event.target.closest('.krug');
+            // pageItem результатом будет вывод в консоле элемента по которому кликнуил, если попали по этому элементу
+            
+            if(pageItem === null) return;
+            
+            const pageIndex = pageItem.dataset.pageIndex;
+            // можно через детруктурирование const {pageIndex} = pageItem.dataset;
+            // dataset выдает все дата атрибуты на данном элементе
+            // из дата атрибутов приходят результаты в виде строчки. Необходимо преобразовать в цифры через parseInt(value, 10)
+            console.log("pageIndex=", pageIndex);
+            this.setPage(parseInt(pageIndex, 10));
+       });
+
+       
+    }
 }
 
-// Следующая лекция №10
+// Следующая лекция №12
+
