@@ -1,8 +1,8 @@
 export default class Pagination {
-    constructor ({activePageIndex = 0} = {}) {
+    constructor ({activePageIndex = 0, totalPages = 0} = {}) {
         this.activePageIndex = activePageIndex;
 
-        this.defaultPagesSize = 12;
+        this.totalPages = totalPages;
 
         this.render();
 
@@ -31,7 +31,7 @@ export default class Pagination {
                     </div>
                 </nav>
             </div>
-        `
+        `;
     }
 
     getPages() {
@@ -39,13 +39,13 @@ export default class Pagination {
         // map вернет нам новый массив с элементами pagination через запятую
         return `
             <ul class="page-list non-styles" data-element="pagination">
-                ${new Array(this.defaultPagesSize).fill(1).map((item, index) => {
+                ${new Array(this.totalPages).fill(1).map((item, index) => {
                     return this.getPageTemplate(index);
                 }
                 ).join("")
                 }
             </ul>
-        `
+        `;
     }
                                                                                 // active
     getPageTemplate(pageIndex = 0) {
@@ -56,13 +56,13 @@ export default class Pagination {
                     ${pageIndex + 1}
                 </a>
             </li>
-        `
+        `;
     }
 
     setPage(pageIndex = 0) {
         if(pageIndex === this.activePageIndex) return;
 
-        if(pageIndex > this.defaultPagesSize - 1 || pageIndex < 0) return;
+        if(pageIndex > this.totalPages - 1 || pageIndex < 0) return;
 
         const activePage = this.element.querySelector(".krug.active");
         if(activePage) {activePage.classList.remove("active")}
@@ -71,6 +71,8 @@ export default class Pagination {
         if(nextActivePage) {nextActivePage.classList.add("active")};
 
         this.activePageIndex = pageIndex;
+
+        this.dispatchEvent(pageIndex);
     }
 
     nextPage() {
@@ -91,7 +93,7 @@ export default class Pagination {
         wrapper.innerHTML = this.getTemplate();
 
         // помещаем элемент в наш обьект
-        this.element = wrapper;
+        this.element = wrapper.firstElementChild;
     }
 
     addEventListeners() {
@@ -112,13 +114,19 @@ export default class Pagination {
             // можно через детруктурирование const {pageIndex} = pageItem.dataset;
             // dataset выдает все дата атрибуты на данном элементе
             // из дата атрибутов приходят результаты в виде строчки. Необходимо преобразовать в цифры через parseInt(value, 10)
-            console.log("pageIndex=", pageIndex);
+            
             this.setPage(parseInt(pageIndex, 10));
        });
 
        
     }
+
+    dispatchEvent(pageIndex) {
+        const customEvent = new CustomEvent("page-changed", {detail:pageIndex});
+
+        this.element.dispatchEvent(customEvent);
+    }
 }
 
-// Следующая лекция №12
+// Следующая лекция №14 (мин)
 

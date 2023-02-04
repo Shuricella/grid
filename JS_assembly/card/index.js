@@ -1,72 +1,76 @@
 // В этой компоненте будет вся логика от всей страницы и другие компоненты
-import Card from "./card.js";
+import CardsList from "./cards-list.js";
 import Pagination from "./pagination.js";
 
-const product = {
-    "id": "76w0hz7015kkr9kjkav",
-    "images": "https://content2.rozetka.com.ua/goods/images/big_tile/163399632.jpg",
-    "title": "Ноутбук Acer Aspire 3 A315-57G-336G (NX.HZREU.01S) Charcoal Black",
-    "rating": 2.89,
-    "price": 15999,
-    "category": "laptops",
-    "brand": "Acer"
-};
-
-// const monitor = {
-//     "id": "ci0q634ou8kr9kjkav",
-//     "images":"https://content.rozetka.com.ua/goods/images/big_tile/168721089.jpg",
-//     "title": "Монитор 24.5\ Asus TUF Gaming VG259QR (90LM0530-B03370)",
-//     "rating": 0.69,
-//     "price": 14200,
-//     "category": "monitors",
-//     "brand": "asus"
-// };
-
 export default class OnlineStorePage {
-    constructor() {
+    constructor(products = []) {
+        // Колличество страничек на листе
+        this.pageSize = 4;
+
+        this.products = products;
+
         this.components = {};
         
         this.initComponents();
         this.render();
         this.renderComponents();
+
+        this.initEventListeners();
     }
 
     getTemplate() {
         return `
         <div class="wrapper">
-            <div data-element="card">
-                <!--Card component-->
+            <div class="cardsList" data-element="cardsList">
+                <!-- Card List component -->
             </div>
 
             <div data-element="pagination">
                 <!--Pagination component-->
             </div>
         </div>
-        `
+        `;
     }
 
     initComponents() {
-        const card = new Card(product);
-        const pagination = new Pagination({activePageIndex: 5});
+        const totalPages = Math.ceil(this.products.length / this.pageSize);
 
-        this.components.card = card;
+        const cardsList = new CardsList(this.products.slice(0, this.pageSize));
+        const pagination = new Pagination({
+            activePageIndex: 0,
+            totalPages: totalPages
+        });
+
+        this.components.cardsList = cardsList;
         this.components.pagination = pagination;
     }
 
     renderComponents() {
-        const cardConteiner = this.element.querySelector('[data-element="card"]');
+        const cardsConteiner = this.element.querySelector('[data-element="cardsList"]');
         const paginationConteiner = this.element.querySelector('[data-element="pagination"]');
 
-        cardConteiner.append(this.components.card.element);
+        cardsConteiner.append(this.components.cardsList.element);
         paginationConteiner.append(this.components.pagination.element);
     }
 
     render() {
-        const wrapper = document.createElement("section");
+        const wrapper = document.createElement("div");
 
         wrapper.innerHTML = this.getTemplate();
 
         // помещаем элемент в наш обьект
-        this.element = wrapper;
+        this.element = wrapper.firstElementChild;
+    }
+
+    initEventListeners() {
+        this.components.pagination.element.addEventListener("page-changed", event => {
+            const pageIndex = event.detail;
+
+            const start = this.pageSize * pageIndex;
+            const end = start + this.pageSize;
+            const data = this.products.slice(start, end);
+
+            this.components.cardsList.update(data);
+        })
     }
 }

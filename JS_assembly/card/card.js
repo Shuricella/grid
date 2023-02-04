@@ -11,7 +11,7 @@ export default class Card {
 
                 <section class="block-img">
                 <!-- height="200" -->
-                <img src="${this.state.images}" alt="product">
+                <img src="${this.state.images[0]}" alt="product">
 
                 </section>
 
@@ -43,7 +43,7 @@ export default class Card {
                 </section>
 
             </main>
-        `
+        `;
     }
 
     update(data = {}) {
@@ -52,11 +52,11 @@ export default class Card {
     }
 
     myRender() {
-        const wrapper = document.createElement("section");
+        const wrapper = document.createElement("div");
 
         wrapper.innerHTML = this.getTemplate();
 
         // помещаем элемент в наш обьект
-        this.element = wrapper;
+        this.element = wrapper.firstElementChild;
     }
 }
