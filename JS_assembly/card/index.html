@@ -18,8 +18,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: space-between;
-            width: 1100px;
-            height: 1200px;
+            width: 1700px;
+            height: 2100px;
             margin: 100px auto;
         }
 
@@ -29,8 +29,8 @@
             flex-wrap: wrap;
             justify-content: space-between;
             align-content: space-around;
-            width: 980px;
-            height: 1000px;
+            width: 1400px;
+            height: 2000px;
         }
       
     </style>
@@ -43,26 +43,22 @@
         // import {products} from "./products.js";
         import OnlineStorePage from "./index.js";
 
-        const getUrl = page => `https://online-store.bootcamp.place/api/products?_page=${page}&_limit=9`;
+        // const getUrl = page => `https://online-store.bootcamp.place/api/products?_page=${page}&_limit=9`;
 
-        fetch(getUrl(1))
-        .then(response => response.json())
-        .then(products => {
-            const page = new OnlineStorePage(products);
-        
-            const someElement = document.querySelector("#root");
+        // fetch(getUrl(1))
+        // .then(response => response.json())
+        // .then(products => {
 
-            someElement.append(page.element);
-        });
+        const page = new OnlineStorePage();
+    
+        const someElement = document.querySelector("#root");
+
+        someElement.append(page.element);
+
+        // });
                 
         
      
     </script>
 </body>
 </html>
-
-<!-- .wrapper {
-    /* outline: solid 1px black; */
-    width: 460px;
-    margin: 100px auto;
-} -->

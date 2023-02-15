@@ -11,7 +11,7 @@ export default class Card {
 
                 <section class="block-img">
                 <!-- height="200" -->
-                <img src="${this.state.images[0]}" alt="product">
+                <img src="${this.state.images[0]}" alt="${this.state.category}: ${this.state.brand}">
 
                 </section>
 

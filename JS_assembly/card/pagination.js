@@ -6,8 +6,6 @@ export default class Pagination {
 
         this.render();
 
-        console.log("this.activePageIndex=", this.activePageIndex);
-
         this.addEventListeners();
         
     }
@@ -127,6 +125,3 @@ export default class Pagination {
         this.element.dispatchEvent(customEvent);
     }
 }
-
-// Следующая лекция №14 (мин)
-
